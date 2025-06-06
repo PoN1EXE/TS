@@ -1,34 +1,31 @@
-import React, { useState } from 'react'
-import { ProductsItems } from './../data/ProductsItems'
+import { useState } from 'react'
 import { IProduct } from '../models'
 
 interface ProductProps {
-  ProductsItems: IProduct
+  productsItems: IProduct
 }
 
-const Product = ({ ProductsItems }: ProductProps) => {
+export const Product = ({ productsItems }: ProductProps) => {
   const [details, setDetails] = useState(false)
 
   return (
     <div className='product'>
-      <h2 className='font-bold'>{ProductsItems.title}</h2>
-      <img src={ProductsItems.image} alt={ProductsItems.title} width={200} className='mx-auto' />
-      <p className='font-bold'>Price: ${ProductsItems.price}</p>
+      <h2 className='font-bold'>{productsItems.title}</h2>
+      <img src={productsItems.image} alt={productsItems.title} width={200} className='mx-auto' />
+      <p className='font-bold'>Price: ${productsItems.price}</p>
       <button className='py-2 px-4 border bg-red-400' onClick={() => setDetails((prev) => !prev)}>
         {details ? 'Hide details' : 'Show details'}
       </button>
 
       {details && (
         <div>
-          <p>{ProductsItems.description}</p>
-          <p className='font-semibold'>Category: {ProductsItems.category}</p>
+          <p>{productsItems.description}</p>
+          <p className='font-semibold'>Category: {productsItems.category}</p>
           <p className='font-semibold'>
-            Rating: {ProductsItems.rating.rate} ({ProductsItems.rating.count} reviews)
+            Rating: {productsItems?.rating?.rate} ({productsItems?.rating?.count} reviews)
           </p>
         </div>
       )}
     </div>
   )
 }
-
-export { Product }

@@ -1,13 +1,12 @@
-import { title } from 'process'
-import React from 'react'
+import { ReactNode } from 'react'
 
 interface ModalProps {
-  children: React.ReactNode
+  children: ReactNode
   title: string
   onClose: () => void
 }
 
-const Modal = ({ children, title, onClose }: ModalProps) => {
+export const Modal = ({ children, title, onClose }: ModalProps) => {
   return (
     <>
       <div className='fixed bg-black/50 top-0 right-0 left-0 bottom-0' onClick={onClose} />
@@ -18,5 +17,3 @@ const Modal = ({ children, title, onClose }: ModalProps) => {
     </>
   )
 }
-
-export { Modal }

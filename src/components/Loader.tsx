@@ -1,7 +1,3 @@
-import React from 'react'
-
-const Loader = () => {
+export const Loader = () => {
   return <p className='text-center'>Loading...</p>
 }
-
-export { Loader }

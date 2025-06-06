@@ -1,6 +1,6 @@
 import { IProduct } from './../models'
 
-export const ProductsItems: IProduct[] = [
+const productsItems: IProduct[] = [
   {
     id: 1,
     title: 'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops',
@@ -45,3 +45,5 @@ export const ProductsItems: IProduct[] = [
     rating: { rate: 2.1, count: 430 },
   },
 ]
+
+export { productsItems }

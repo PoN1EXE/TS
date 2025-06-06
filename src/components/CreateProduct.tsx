@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { IProduct } from '../models'
 import axios from 'axios'
 import { ErrorMessage } from './ErrorMessage'
-import { ProductsItems } from './../data/ProductsItems'
 
 const productData: IProduct = {
   id: 0,
@@ -21,7 +20,7 @@ interface CreateProductProps {
   onCreate: (ProductsItems: IProduct) => void
 }
 
-const CreateProduct = ({ onCreate }: CreateProductProps) => {
+export const CreateProduct = ({ onCreate }: CreateProductProps) => {
   const [error, setError] = useState('')
   const [value, setValue] = useState('')
 
@@ -62,5 +61,3 @@ const CreateProduct = ({ onCreate }: CreateProductProps) => {
     </form>
   )
 }
-
-export { CreateProduct }
